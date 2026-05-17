@@ -1,7 +1,7 @@
 id=earthpods
 name=EarthPods
-version=v0.2.6
-versionCode=46
+version=v0.3.0
+versionCode=52
 author=@macdirtycow
 description=Installs EarthPods as a system app for granting BLUETOOTH_PRIVILEGED and MODIFY_PHONE_STATE permission for better integraion with android.
 updateJson=https://raw.githubusercontent.com/macdirtycow/earthpods/main/extras/update_nonpatch.json
