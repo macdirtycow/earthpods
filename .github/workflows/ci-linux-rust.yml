@@ -47,22 +47,22 @@ jobs:
           cargo build --release --verbose
           just
           mkdir -p dist
-          cp target/release/librepods dist/librepods
-          mv dist/LibrePods-x86_64.AppImage dist/librepods-x86_64.AppImage
+          cp target/release/earthpods dist/earthpods
+          mv dist/EarthPods-x86_64.AppImage dist/earthpods-x86_64.AppImage
 
       - name: Upload AppImage artifact
         if: "!startsWith(github.ref, 'refs/tags/linux-v')"
         uses: actions/upload-artifact@v4
         with:
-          name: librepods-x86_64.AppImage
-          path: linux-rust/dist/librepods-x86_64.AppImage
+          name: earthpods-x86_64.AppImage
+          path: linux-rust/dist/earthpods-x86_64.AppImage
 
       - name: Upload binary artifact
         if: "!startsWith(github.ref, 'refs/tags/linux-v')"
         uses: actions/upload-artifact@v4
         with:
-          name: librepods
-          path: linux-rust/dist/librepods
+          name: earthpods
+          path: linux-rust/dist/earthpods
 
       - name: Create tarball for Flatpak
         if: startsWith(github.ref, 'refs/tags/linux-v')
@@ -71,7 +71,7 @@ jobs:
           VERSION="${GITHUB_REF_NAME#linux-v}"
           just tarball "${VERSION}"
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
-          echo "TAR_PATH=linux-rust/dist/librepods-v${VERSION}-source.tar.gz" >> $GITHUB_ENV
+          echo "TAR_PATH=linux-rust/dist/earthpods-v${VERSION}-source.tar.gz" >> $GITHUB_ENV
 
       - name: Create GitHub Release (AppImage + binary + source)
         if: startsWith(github.ref, 'refs/tags/linux-v')
@@ -79,9 +79,9 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           files: |
-            linux-rust/dist/librepods-v${{ env.VERSION }}-source.tar.gz
-            linux-rust/dist/librepods-x86_64.AppImage
-            linux-rust/dist/librepods
+            linux-rust/dist/earthpods-v${{ env.VERSION }}-source.tar.gz
+            linux-rust/dist/earthpods-x86_64.AppImage
+            linux-rust/dist/earthpods
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=EarthPods
+Comment=AirPods libreated from Apple's ecosystem
+Exec=earthpods
+Icon=earthpods
+Terminal=false
+Categories=Audio;AudioVideo;Utility;Qt;

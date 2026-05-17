@@ -13,10 +13,10 @@ qt_standard_project_setup()
 
 # Translation files
 set(TS_FILES
-    translations/librepods_tr.ts
+    translations/earthpods_tr.ts
 )
 
-qt_add_executable(librepods
+qt_add_executable(earthpods
     main.cpp
     logger.h
     media/mediacontroller.cpp
@@ -46,7 +46,7 @@ qt_add_executable(librepods
     systemsleepmonitor.hpp
 )
 
-qt_add_qml_module(librepods
+qt_add_qml_module(earthpods
     URI linux
     VERSION 1.0
     QML_FILES
@@ -59,7 +59,7 @@ qt_add_qml_module(librepods
 )
 
 # Add the resource file
-qt_add_resources(librepods "resources"
+qt_add_resources(earthpods "resources"
     PREFIX "/icons"
     FILES
         assets/airpods.png
@@ -74,39 +74,39 @@ qt_add_resources(librepods "resources"
         assets/fonts/SF-Symbols-6.ttf
 )
 
-target_link_libraries(librepods
+target_link_libraries(earthpods
     PRIVATE Qt6::Quick Qt6::Widgets Qt6::Bluetooth Qt6::DBus OpenSSL::SSL OpenSSL::Crypto ${PULSEAUDIO_LIBRARIES}
 )
 
-qt_add_executable(librepods-ctl
-    librepods-ctl.cpp
+qt_add_executable(earthpods-ctl
+    earthpods-ctl.cpp
 )
-target_link_libraries(librepods-ctl
+target_link_libraries(earthpods-ctl
     PRIVATE Qt6::Core Qt6::Network
 )
-install(TARGETS librepods-ctl
+install(TARGETS earthpods-ctl
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
-target_include_directories(librepods PRIVATE ${PULSEAUDIO_INCLUDE_DIRS})
+target_include_directories(earthpods PRIVATE ${PULSEAUDIO_INCLUDE_DIRS})
 
 include(GNUInstallDirs)
-install(TARGETS librepods
+install(TARGETS earthpods
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
-install(FILES assets/me.kavishdevar.librepods.desktop
+install(FILES assets/com.earthpods.app.desktop
     DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
-install(FILES assets/librepods.svg
+install(FILES assets/earthpods.svg
     DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/scalable/apps")
 
 # Translation support
-qt_add_translations(librepods
+qt_add_translations(earthpods
     TS_FILES ${TS_FILES}
     QM_FILES_OUTPUT_VARIABLE QM_FILES
 )
 
 # Install translation files
 install(FILES ${QM_FILES}
-    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/librepods/translations")
+    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/earthpods/translations")

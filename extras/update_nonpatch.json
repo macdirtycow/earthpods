@@ -1,6 +1,6 @@
 {
-  "version": "v0.2.6",
-  "versionCode": 46,
-  "zipUrl": "https://github.com/kavishdevar/librepods/releases/download/v0.2.6/LibrePods-FOSS-v0.2.6-release.zip",
-  "changelog": "https://raw.githubusercontent.com/kavishdevar/librepods/main/extras/CHANGELOG.md"
+  "version": "v0.2.9",
+  "versionCode": 52,
+  "zipUrl": "https://github.com/macdirtycow/earthpods/releases/download/v0.2.9/EarthPods-FOSS-v0.2.9-release.zip",
+  "changelog": "https://raw.githubusercontent.com/macdirtycow/earthpods/main/extras/CHANGELOG.md"
 }

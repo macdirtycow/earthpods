@@ -1,35 +1,38 @@
->[!IMPORTANT]
-Development paused due to lack of time until June 2026 (JEE Advanced). PRs and issues might not be responded to until then.
-
----
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./imgs/banner-dark.png" />
   <source media="(prefers-color-scheme: light)" srcset="./imgs/banner.png" />
-  <img alt="LibrePods" src="./imgs/banner.png" />
+  <img alt="EarthPods" src="./imgs/banner.png" />
 </picture>
 
 <div align="center" style="margin: 20px 0px;">
-<a href="https://github.com/kavishdevar/librepods/releases/latest">
-  <img src="https://img.shields.io/github/downloads/kavishdevar/librepods/total?label=GitHub%20Downloads" />
+<a href="https://github.com/macdirtycow/earthpods/releases/latest">
+  <img src="https://img.shields.io/github/downloads/macdirtycow/earthpods/total?label=GitHub%20Downloads" />
 </a>
-<a href="https://github.com/kavishdevar/librepods/actions/workflows/ci-android.yml">
-  <img src="https://github.com/kavishdevar/librepods/actions/workflows/ci-android.yml/badge.svg" />
+<a href="https://github.com/macdirtycow/earthpods/actions/workflows/ci-android.yml">
+  <img src="https://github.com/macdirtycow/earthpods/actions/workflows/ci-android.yml/badge.svg" />
 </a>
-<a href="https://github.com/kavishdevar/librepods/actions/workflows/ci-linux-rust.yml">
-  <img src="https://github.com/kavishdevar/librepods/actions/workflows/ci-linux-rust.yml/badge.svg" />
+<a href="https://github.com/macdirtycow/earthpods/actions/workflows/ci-linux-rust.yml">
+  <img src="https://github.com/macdirtycow/earthpods/actions/workflows/ci-linux-rust.yml/badge.svg" />
 </a>
-<a href="https://github.com/kavishdevar/librepods/issues">
-  <img src="https://img.shields.io/github/issues/kavishdevar/librepods" />  
+<a href="https://github.com/macdirtycow/earthpods/issues">
+  <img src="https://img.shields.io/github/issues/macdirtycow/earthpods" />  
 </a>
 <a href="https://discord.gg/HhG4ycVum4">
   <img src="https://img.shields.io/discord/1441416992027574375?logoColor=white&color=5865F2&label=Discord" />
 </a>
 </div>
 
-# What is LibrePods?
+# What is EarthPods?
 
-LibrePods allows you to use AirPods features that are exclusive to Apple devices. It implements the proprietary protocol used to exchange data between AirPods and Apple devices, enabling features like changing noise control modes, fast ear detection, accurate battery status, head gestures, conversational awareness, and more on non-Apple platforms.
+EarthPods is a personal fork of LibrePods focused on making advanced AirPods controls easier to access on Android and Linux. It keeps the reverse-engineered AirPods protocol work that makes features like noise control, ear detection, battery status, head gestures, conversational awareness, accessibility settings, and device takeover possible outside Apple's ecosystem.
+
+This build is branded as EarthPods, uses the Android package `com.earthpods.app`, includes a custom EarthPods launcher icon, and unlocks the previously premium in-app features for the FOSS release.
+
+# Credits and Origin
+
+EarthPods is forked from [LibrePods](https://github.com/kavishdevar/librepods), originally created by [Kavish Devar](https://github.com/kavishdevar) and the LibrePods contributors. The hard reverse-engineering work, Android/Linux foundations, protocol research, and much of the original application architecture come from that project.
+
+This fork keeps that history visible and keeps the project under the same GPL license. If EarthPods helps you, please also check out and credit the original LibrePods project.
 
 # Feature availability
 
@@ -77,12 +80,12 @@ The app does not currently provide head tracking information to Android for the 
 Spatializing stereo sound is beyond this project's scope and will never be available. Many OEMs have an implementation of their own for this.
 
 ## Heart Rate Monitoring (AirPods Pro 3 and later)
-This is being worked upon, check the #⁠reverse-engineering channel on the LibrePods Discord server for more information. If it is ever implemented, it will most likely need root on Android.
+This is being worked upon, check the #⁠reverse-engineering channel on the EarthPods Discord server for more information. If it is ever implemented, it will most likely need root on Android.
 
 ## High quality two-way audio
 On iOS/iPadOS, you can continue using A2DP while AirPods send the audio stream from its microphone over AACP. 
 
-Since there is no way on Android to have a virtual audio source which can be used for calls where the LibrePods app can provide the higher quality microphone stream, the app will need root on Android.s
+Since there is no way on Android to have a virtual audio source which can be used for calls where the EarthPods app can provide the higher quality microphone stream, the app will need root on Android.s
 
 &ast; Features marked with an asterisk require the VendorID to be change to that of Apple.
 
@@ -95,7 +98,7 @@ Since there is no way on Android to have a virtual audio source which can be use
 
 Turns out, if you change the VendorID in DID Profile to that of Apple, you get access to several special features!
 
-You can do this on Linux by editing the DeviceID in `/etc/bluetooth/main.conf`. Add this line to the config file `DeviceID = bluetooth:004C:0000:0000`. For android you can enable the `act as Apple device` setting in the app's settings (shown only when Xposed is available and LibrePods module is enabled).
+You can do this on Linux by editing the DeviceID in `/etc/bluetooth/main.conf`. Add this line to the config file `DeviceID = bluetooth:004C:0000:0000`. For android you can enable the `act as Apple device` setting in the app's settings (shown only when Xposed is available and EarthPods module is enabled).
 
 ## Multi-device Connectivity
 
@@ -111,7 +114,7 @@ All hearing aid customizations can be done from Android (linux soon), including 
 
 Please refer to the Wireshark dissector plugin by Nojus ([@pabloaul](https://github.com/pabloaul)) for more information on the protocols used: [pabloaul/apple-wireshark](https://github.com/pabloaul/apple-wireshark)
 
-The dissector had not been used in LibrePods for most of the implementation; I had reverse engineered the protocol myself before this dissector was made. But many (future) features including two-way high quality audio and spatial audio would not have been possible without their RE efforts!
+The dissector had not been used in EarthPods for most of the implementation; I had reverse engineered the protocol myself before this dissector was made. But many (future) features including two-way high quality audio and spatial audio would not have been possible without their RE efforts!
 
 # Use of AI
 
@@ -222,22 +225,22 @@ A huge thank you to everyone supporting the project!
 # Alternates for other platforms:
 - CAPod - A companion app for AirPods on Android. ([play store](https://play.google.com/store/apps/details?id=eu.darken.capod) | [source code](https://github.com/d4rken-org/capod)). Use this if you're using Android version 16 QPR3 or below and are not rooted.
 - MagicPods for Steam Deck ([website](https://magicpods.app/steamdeck/))
-- MagicPods - if you're looking for "LibrePods for Windows"  ([ms store](https://apps.microsoft.com/store/detail/9P6SKKFKSHKM) [installer](https://magicpods.app/installer/MagicPods.appinstaller) | [website](https://magicpods.app/))
+- MagicPods - if you're looking for "EarthPods for Windows"  ([ms store](https://apps.microsoft.com/store/detail/9P6SKKFKSHKM) [installer](https://magicpods.app/installer/MagicPods.appinstaller) | [website](https://magicpods.app/))
 
 # Star History
 
-<a href="https://www.star-history.com/#kavishdevar/librepods&type=date&legend=top-left">
+<a href="https://www.star-history.com/#macdirtycow/earthpods&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=kavishdevar/librepods&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=kavishdevar/librepods&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=kavishdevar/librepods&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=macdirtycow/earthpods&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=macdirtycow/earthpods&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=macdirtycow/earthpods&type=date&legend=top-left" />
  </picture>
 </a>
 
 # License
 
-LibrePods - AirPods liberated from Apple’s ecosystem
-Copyright (C) 2025 LibrePods contributors
+EarthPods - AirPods liberated from Apple’s ecosystem
+Copyright (C) 2025 EarthPods contributors
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

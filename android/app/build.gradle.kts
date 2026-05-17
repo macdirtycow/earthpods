@@ -35,11 +35,11 @@ android {
             }
         }
     }
-    namespace = "me.kavishdevar.librepods"
+    namespace = "com.earthpods.app"
     compileSdk = 37
 
     defaultConfig {
-        applicationId = "me.kavishdevar.librepods"
+        applicationId = "com.earthpods.app"
         targetSdk = 37
         versionCode = 52
         versionName = appVersionName
@@ -178,13 +178,13 @@ fun registerRootModuleZipTask(
     duplicatesStrategy = DuplicatesStrategy.WARN
 
     from(layout.buildDirectory.file(apkPath)) {
-        into("system/priv-app/LibrePods")
-        rename { "LibrePods.apk" }
+        into("system/priv-app/EarthPods")
+        rename { "EarthPods.apk" }
     }
 
     delete(layout.buildDirectory.dir("outputs/rootModuleZips"))
 
-    archiveFileName.set("LibrePods-FOSS-v$appVersionName-$buildType.zip")
+    archiveFileName.set("EarthPods-FOSS-v$appVersionName-$buildType.zip")
     destinationDirectory.set(layout.buildDirectory.dir("outputs/rootModuleZips"))
 }
 
@@ -212,12 +212,12 @@ val collect = tasks.register<Copy>("collectReleaseArtifacts") {
 
     from(layout.buildDirectory.dir("outputs/apk/foss/release")) {
         include("*.apk")
-        rename(".*", "LibrePods-FOSS-v$appVersionName-release.apk")
+        rename(".*", "EarthPods-FOSS-v$appVersionName-release.apk")
     }
 
     from(layout.buildDirectory.dir("outputs/apk/foss/debug")) {
         include("*.apk")
-        rename(".*", "LibrePods-FOSS-v$appVersionName-debug.apk")
+        rename(".*", "EarthPods-FOSS-v$appVersionName-debug.apk")
     }
 
     from(layout.buildDirectory.dir("outputs/bundle/playRelease")) {

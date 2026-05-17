@@ -1,4 +1,4 @@
-name: Build LibrePods Linux
+name: Build EarthPods Linux
 
 on:
   workflow_dispatch:
@@ -33,5 +33,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: librepods-linux
-          path: linux/build/librepods
+          name: earthpods-linux
+          path: linux/build/earthpods

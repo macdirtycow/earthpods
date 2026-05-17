@@ -1,19 +1,19 @@
-# LibrePods on Linux
+# EarthPods on Linux
 
 A new rewrite is being worked upon. Please look at the list of features in the root README to see what's supported in the new version. 
 
-The rewrite can be found in the `linux/rust` branch [here](https://github.com/kavishdevar/librepods/tree/linux/rust/linux-rust). Follow the development in [PR #241](https://github.com/kavishdevar/librepods/pull/241). 
+The rewrite can be found in the `linux/rust` branch [here](https://github.com/macdirtycow/earthpods/tree/linux/rust/linux-rust). Follow the development in [PR #241](https://github.com/macdirtycow/earthpods/pull/241). 
 
 
 ## Installation
 
 ### GitHub Releases
 
-The app is ready to download as an AppImage or an executable. You can download the latest pre-release from the [GitHub releases](https://github.com/kavishdevar/librepods/releases?q="linux-v0").
+The app is ready to download as an AppImage or an executable. You can download the latest pre-release from the [GitHub releases](https://github.com/macdirtycow/earthpods/releases?q="linux-v0").
 
 ### Nightly Builds (recommended)
 
-You can also try the latest build of the new version from the [GitHub Actions artifacts](https://github.com/kavishdevar/librepods/actions/workflows/ci-linux-rust.yml). On the latest successful workflow run, download the **librepods-x86_64.AppImage** or **librepods** binary from **Artifacts**.
+You can also try the latest build of the new version from the [GitHub Actions artifacts](https://github.com/macdirtycow/earthpods/actions/workflows/ci-linux-rust.yml). On the latest successful workflow run, download the **earthpods-x86_64.AppImage** or **earthpods** binary from **Artifacts**.
 
 
 ![new version screenshot](https://github.com/user-attachments/assets/86b3c871-89a8-4e49-861a-5119de1e1d28)
@@ -21,7 +21,7 @@ You can also try the latest build of the new version from the [GitHub Actions ar
 <details>
   <summary>README for the old version</summary>
 
-# LibrePods Linux
+# EarthPods Linux
 
 ![screenshot](imgs/main-app.png)
 
@@ -105,7 +105,7 @@ A native Linux application to control your AirPods, with support for:
 2. Run the application:
 
    ```bash
-   ./librepods
+   ./earthpods
    ```
 
 ## Troubleshooting
@@ -155,11 +155,11 @@ systemctl --user enable --now mpris-proxy
 
 ## CLI Control
 
-`librepods-ctl` is a small command-line tool that lets you access LibrePods from the terminal or via scripts, as long as the main application is running.
+`earthpods-ctl` is a small command-line tool that lets you access EarthPods from the terminal or via scripts, as long as the main application is running.
 
 ### Usage
 ```bash
-librepods-ctl
+earthpods-ctl
 ```
 
 ### Commands
@@ -174,10 +174,10 @@ librepods-ctl
 ### Example
 ```bash
 # Enable ANC
-librepods-ctl noise:anc
+earthpods-ctl noise:anc
 
 # Enable Transparency mode
-librepods-ctl noise:transparency
+earthpods-ctl noise:transparency
 ```
 
 

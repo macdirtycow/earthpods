@@ -1,2 +1,2 @@
-## LibrePods root module changelog
-_[See here](https://github.com/kavishdevar/librepods/releases)_
+## EarthPods root module changelog
+_[See here](https://github.com/macdirtycow/earthpods/releases)_

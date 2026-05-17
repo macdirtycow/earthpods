@@ -8,7 +8,7 @@ ApplicationWindow {
     visible: !airPodsTrayApp.hideOnStart
     width: 400
     height: 300
-    title: "LibrePods"
+    title: "EarthPods"
     objectName: "mainWindowObject"
 
     onClosing: mainWindow.visible = false

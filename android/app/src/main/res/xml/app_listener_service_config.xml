@@ -5,5 +5,5 @@
     android:canRetrieveWindowContent="false"
     android:label="@string/app_listener_service_label"
     android:description="@string/app_listener_service_description"
-    android:settingsActivity="me.kavishdevar.librepods.MainActivity"
+    android:settingsActivity="com.earthpods.app.MainActivity"
     android:accessibilityFlags="flagReportViewIds"/>
